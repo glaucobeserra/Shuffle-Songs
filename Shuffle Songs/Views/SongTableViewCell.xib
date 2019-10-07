@@ -13,15 +13,15 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="SongTableViewCell" customModule="Shuffle_Songs" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="402" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="402" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderCover" translatesAutoresizingMaskIntoConstraints="NO" id="bzr-IY-4Sw">
-                        <rect key="frame" x="20" y="16" width="60" height="60"/>
+                        <rect key="frame" x="20" y="17.5" width="65" height="65"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="l6s-Oi-dSy"/>
-                            <constraint firstAttribute="width" constant="60" id="uBe-gL-l8P"/>
+                            <constraint firstAttribute="height" constant="65" id="l6s-Oi-dSy"/>
+                            <constraint firstAttribute="width" constant="65" id="uBe-gL-l8P"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -30,16 +30,16 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PSl-Dn-ie4">
-                        <rect key="frame" x="96" y="21.5" width="290" height="49"/>
+                        <rect key="frame" x="101" y="25.5" width="285" height="49"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJo-6Y-XU4">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.86296325922012329" green="0.39710789918899536" blue="0.36914533376693726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name + Genre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO4-4N-W7N">
-                                <rect key="frame" x="0.0" y="28.5" width="290" height="20.5"/>
+                                <rect key="frame" x="0.0" y="28.5" width="285" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -49,12 +49,15 @@
                 </subviews>
                 <color key="backgroundColor" red="0.21702331304550171" green="0.14308780431747437" blue="0.21735796332359314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="bzr-IY-4Sw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="11C-FZ-lUI"/>
+                    <constraint firstItem="bzr-IY-4Sw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="11C-FZ-lUI"/>
+                    <constraint firstItem="PSl-Dn-ie4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="2ec-F2-DNM"/>
                     <constraint firstItem="PSl-Dn-ie4" firstAttribute="leading" secondItem="bzr-IY-4Sw" secondAttribute="trailing" constant="16" id="BbW-Y4-eiR"/>
                     <constraint firstItem="PSl-Dn-ie4" firstAttribute="centerY" secondItem="bzr-IY-4Sw" secondAttribute="centerY" id="M3R-8C-OdM"/>
                     <constraint firstItem="bzr-IY-4Sw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="aB5-3V-qAe"/>
-                    <constraint firstAttribute="bottom" secondItem="bzr-IY-4Sw" secondAttribute="bottom" constant="16" id="oWB-4v-Pjx"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PSl-Dn-ie4" secondAttribute="bottom" constant="16" id="ayl-Np-7UF"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bzr-IY-4Sw" secondAttribute="bottom" constant="16" id="oWB-4v-Pjx"/>
                     <constraint firstAttribute="trailing" secondItem="PSl-Dn-ie4" secondAttribute="trailing" constant="16" id="yyi-Mu-qw0"/>
+                    <constraint firstItem="bzr-IY-4Sw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="z50-9s-giG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

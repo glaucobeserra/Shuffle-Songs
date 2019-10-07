@@ -9,6 +9,7 @@
 import Foundation
 
 extension URLComponents {
+    
     init(service: URLComponentsProtocol) {
         self.init()
         scheme = service.scheme

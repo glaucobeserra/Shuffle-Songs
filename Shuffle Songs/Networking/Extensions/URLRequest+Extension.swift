@@ -9,14 +9,13 @@
 import Foundation
 
 extension URLRequest {
+    
     init(service: Service) {
         let urlComponents = URLComponents(service: service)
         guard let url = urlComponents.url else {
             fatalError("\nVerifique a URL, em especial o PATH!\n")
-            return
         }
         self.init(url: url)
-        
         allHTTPHeaderFields = service.headers
         httpMethod = service.method.rawValue
     }

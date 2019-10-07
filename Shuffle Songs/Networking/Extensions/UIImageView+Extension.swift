@@ -14,17 +14,14 @@ extension UIImageView {
     
     func loadImageUsingUrl(url: URL) {
         let nsURL = url as NSURL
-        
         if let imageFromCache = imageCache.object(forKey: nsURL) {
             self.image = imageFromCache
             return
         }
-        
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 return
             }
-            
             DispatchQueue.main.async {
                 if let data = data, let image = UIImage(data: data) {
                     imageCache.setObject(image, forKey: nsURL)

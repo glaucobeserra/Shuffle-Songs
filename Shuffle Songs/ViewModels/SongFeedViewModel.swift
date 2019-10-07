@@ -19,7 +19,7 @@ class SongFeedViewModel {
     private let artists: [Artists]!
     private let limit: Int
     
-    //MARK: Shared properties
+    // MARK: Shared properties
     var numberOfRows = 0
     private(set) var songs: [Song] = [] {
         didSet {
@@ -28,17 +28,22 @@ class SongFeedViewModel {
         }
     }
     
+    // MARK: Inicialization
     init(artists: [Artists], limit: Int = 6) {
         self.artists = artists
         self.limit = limit
     }
     
+    // MARK: Methods
+    
+    // TODO: Melhorar a maneira como a música é distinguida do artista através do model (Decoding Strategy) ⚠️
     func getSongs() {
         let service = SongsService.getSongs(from: artists, limit: limit)
         sessionProvider.request(request: service, type: SongResult.self) { result in
             switch result {
             case .success(let result):
-                let validSongs = result.results.filter {$0.trackName != nil}
+                let validSongs = result.results.filter {
+                    $0.trackName != nil && $0.wrapperType == .track}
                 self.songs = validSongs
             case .failure(let error):
                 self.onInformationFailed?(error.localizedDescription)

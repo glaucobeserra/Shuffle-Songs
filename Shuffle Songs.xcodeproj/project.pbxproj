@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7803A132234A197700F009DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7803A131234A197700F009DC /* AppDelegate.swift */; };
-		7803A134234A197700F009DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7803A133234A197700F009DC /* ViewController.swift */; };
+		7803A134234A197700F009DC /* SongFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7803A133234A197700F009DC /* SongFeedViewController.swift */; };
 		7803A137234A197700F009DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7803A135234A197700F009DC /* Main.storyboard */; };
 		7803A139234A197800F009DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7803A138234A197800F009DC /* Assets.xcassets */; };
 		7803A13C234A197800F009DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7803A13A234A197800F009DC /* LaunchScreen.storyboard */; };
 		7803A147234A197900F009DC /* Shuffle_SongsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7803A146234A197900F009DC /* Shuffle_SongsTests.swift */; };
+		78E7FB67234B6B58005AF5E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7FB66234B6B58005AF5E9 /* UIViewController+Extension.swift */; };
 		78F636FB234A3212000EC85E /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F636FA234A3212000EC85E /* Artists.swift */; };
 		78F636FE234A35F6000EC85E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F636FD234A35F6000EC85E /* HTTPMethod.swift */; };
 		78F63700234A365D000EC85E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F636FF234A365D000EC85E /* Result.swift */; };
@@ -47,7 +48,7 @@
 /* Begin PBXFileReference section */
 		7803A12E234A197700F009DC /* Shuffle Songs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shuffle Songs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7803A131234A197700F009DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7803A133234A197700F009DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7803A133234A197700F009DC /* SongFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFeedViewController.swift; sourceTree = "<group>"; };
 		7803A136234A197700F009DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7803A138234A197800F009DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7803A13B234A197800F009DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		7803A142234A197900F009DC /* Shuffle SongsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shuffle SongsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7803A146234A197900F009DC /* Shuffle_SongsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle_SongsTests.swift; sourceTree = "<group>"; };
 		7803A148234A197900F009DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78E7FB66234B6B58005AF5E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		78F636FA234A3212000EC85E /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		78F636FD234A35F6000EC85E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		78F636FF234A365D000EC85E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				78F63727234B14ED000EC85E /* UIView+Extension.swift */,
+				78E7FB66234B6B58005AF5E9 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,7 +188,7 @@
 		785A156B234B18660064DE7F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7803A133234A197700F009DC /* ViewController.swift */,
+				7803A133234A197700F009DC /* SongFeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,7 +343,7 @@
 				78F636FE234A35F6000EC85E /* HTTPMethod.swift in Sources */,
 				78F63710234A4EEA000EC85E /* URLRequest+Extension.swift in Sources */,
 				78F63700234A365D000EC85E /* Result.swift in Sources */,
-				7803A134234A197700F009DC /* ViewController.swift in Sources */,
+				7803A134234A197700F009DC /* SongFeedViewController.swift in Sources */,
 				78F63719234A50F0000EC85E /* URLSessionProvider.swift in Sources */,
 				78F6371F234AEAE7000EC85E /* SongTableViewCell.swift in Sources */,
 				78F63726234B0EFC000EC85E /* SongViewModel.swift in Sources */,
@@ -353,6 +356,7 @@
 				7803A132234A197700F009DC /* AppDelegate.swift in Sources */,
 				78F63717234A505A000EC85E /* URLSession+Extension.swift in Sources */,
 				78F636FB234A3212000EC85E /* Artists.swift in Sources */,
+				78E7FB67234B6B58005AF5E9 /* UIViewController+Extension.swift in Sources */,
 				78F63702234A36F9000EC85E /* Service.swift in Sources */,
 				78F63708234A4AFD000EC85E /* APIError.swift in Sources */,
 			);
