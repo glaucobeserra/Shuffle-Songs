@@ -14,22 +14,11 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configCell(with model: SongViewModel) {
-        
         trackNameLabel.text = model.trackName
         infoLabel.text = model.info
-        artworkImageView.downloaded(from: model.artworkURL!)
+        if let artworkURL = model.artworkURL {
+            artworkImageView.loadImageUsingUrl(url: artworkURL)
+        }
     }
-    
 }

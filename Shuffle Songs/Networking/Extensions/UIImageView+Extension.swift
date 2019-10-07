@@ -8,24 +8,33 @@
 
 import UIKit
 
+let imageCache = NSCache<NSURL, UIImage>()
+
 extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
-            }
-            }.resume()
-    }
     
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+    func loadImageUsingUrl(url: URL) {
+        let nsURL = url as NSURL
+        
+        if let imageFromCache = imageCache.object(forKey: nsURL) {
+            self.image = imageFromCache
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if error != nil {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    imageCache.setObject(image, forKey: nsURL)
+                    UIView.transition(with: self,
+                                      duration:0.5,
+                                      options: .transitionCrossDissolve,
+                                      animations: { self.image = image },
+                                      completion: nil)
+                }
+            }
+        }.resume()
     }
 }
