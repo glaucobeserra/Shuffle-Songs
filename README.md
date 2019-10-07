@@ -8,7 +8,7 @@ Você decidiu lançar um novo app de músicas que será um sucesso! O app consis
 
 ## Preview
 
-![](Screenshots/demo.gif)
+<img src="Screenshots/demo.gif" height="500">
 
 ## Tech
 
