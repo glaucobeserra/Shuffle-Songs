@@ -15,45 +15,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
-    private let sessionProvider = URLSessionProvider()
-    var finalSongList = [Song]()
+    let artists: [Artists] = [.BlocoTotiOQue, .CharlieAndTheChewieHumans, .DecimaisMCs, .JohnDollar, .MCArianne]
+    lazy var viewModel: SongFeedViewModel = {
+        return SongFeedViewModel(artists: self.artists)
+    }()
     
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        getSongs(from: [.BlocoTotiOQue, .CharlieAndTheChewieHumans, .DecimaisMCs, .JohnDollar, .MCArianne])
-        tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
-        tableView.tableFooterView = UIView()
+        tableViewConfig()
+        setupViewModel()
     }
     
-    private func getSongs(from artists: [Artists]) {
-        let service = SongsService.getSongs(from: artists)
-        sessionProvider.request(request: service, type: SongResult.self) { result in
-            switch result {
-            case .success(let result):
-                let songs = result.results
-                var songList = [Song]()
-                print(songList.count)
-                for song in songs {
-                    if song.trackName != nil {
-                        songList.append(song)
-                    }
-                    
-                }
-                print(songList.count)
-                self.finalSongList = songList
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.tableView.isHidden = false
-                    self.activityIndicator.isHidden = true
-                }
-                
-            case .failure(let error):
-                print(error)
+    private func setupViewModel() {
+        viewModel.onInformationLoaded = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.tableView.isHidden = false
+                self?.activityIndicator.isHidden = true
             }
         }
+        
+        viewModel.getSongs()
+    }
+    
+    private func tableViewConfig() {
+        tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -61,13 +49,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return finalSongList.count
+        return viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as? SongTableViewCell else {return UITableViewCell()}
         let row = indexPath.row
-        let track = finalSongList[row].trackName ?? "erro"
+        let track = viewModel.songs[row].trackName ?? "erro"//.finalSongList[row].trackName ?? "erro"
         cell.trackNameLabel.text = track
 //        cell.config(trackName: track)
         

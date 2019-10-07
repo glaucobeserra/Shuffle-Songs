@@ -30,6 +30,7 @@
 		78F6371B234AE8CC000EC85E /* WrapperType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6371A234AE8CC000EC85E /* WrapperType.swift */; };
 		78F6371F234AEAE7000EC85E /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6371D234AEAE7000EC85E /* SongTableViewCell.swift */; };
 		78F63720234AEAE7000EC85E /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F6371E234AEAE7000EC85E /* SongTableViewCell.xib */; };
+		78F63722234AF9A0000EC85E /* SongFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F63721234AF9A0000EC85E /* SongFeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		78F6371A234AE8CC000EC85E /* WrapperType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperType.swift; sourceTree = "<group>"; };
 		78F6371D234AEAE7000EC85E /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		78F6371E234AEAE7000EC85E /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
+		78F63721234AF9A0000EC85E /* SongFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				78F6371C234AE8D0000EC85E /* Enum */,
 				78F6371D234AEAE7000EC85E /* SongTableViewCell.swift */,
 				78F6371E234AEAE7000EC85E /* SongTableViewCell.xib */,
+				78F63721234AF9A0000EC85E /* SongFeedViewModel.swift */,
 			);
 			path = "Shuffle Songs";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				78F63704234A3739000EC85E /* SongsService.swift in Sources */,
 				78F6370D234A4D23000EC85E /* Song.swift in Sources */,
 				78F6370B234A4C85000EC85E /* SongsClient.swift in Sources */,
+				78F63722234AF9A0000EC85E /* SongFeedViewModel.swift in Sources */,
 				7803A132234A197700F009DC /* AppDelegate.swift in Sources */,
 				78F63717234A505A000EC85E /* URLSession+Extension.swift in Sources */,
 				78F636FB234A3212000EC85E /* Artists.swift in Sources */,

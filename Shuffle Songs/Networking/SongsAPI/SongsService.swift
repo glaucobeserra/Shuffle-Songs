@@ -9,7 +9,7 @@
 import Foundation
 
 enum SongsService {
-    case getSongs(from: [Artists])
+    case getSongs(from: [Artists], limit: Int)
 }
 
 extension SongsService: Service {
@@ -27,10 +27,11 @@ extension SongsService: Service {
     
     var query: [String : Any]? {
         switch self {
-        case .getSongs(let artists):
+        case .getSongs(let artists, let limit):
             var artistIDList: String = ""
             artistIDList = artists.map {String($0.rawValue)}.joined(separator: ",")
-            return ["id":artistIDList, "limit":2]
+            return ["id": artistIDList,
+                    "limit": limit]
         }
     }
     
