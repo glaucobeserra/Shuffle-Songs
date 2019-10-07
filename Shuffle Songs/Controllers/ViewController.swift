@@ -56,12 +56,6 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as? SongTableViewCell else {return UITableViewCell()}
         let songModel = viewModel.dataModelAt(indexPath: indexPath)
         cell.configCell(with: songModel)
-        
-            
-//
-//
-//        cell.trackNameLabel.text =
-        
         return cell
     }
     

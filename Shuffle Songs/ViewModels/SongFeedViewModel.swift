@@ -28,12 +28,9 @@ class SongFeedViewModel {
         }
     }
     
-    
-    
     init(artists: [Artists], limit: Int = 6) {
         self.artists = artists
         self.limit = limit
-//        getSongs(from: artists, limitedTo: limit)
     }
     
     func getSongs() {
@@ -45,7 +42,6 @@ class SongFeedViewModel {
                 self.songs = validSongs
             case .failure(let error):
                 self.onInformationFailed?(error.localizedDescription)
-//                print(error.localizedDescription)
             }
         }
     }
@@ -55,8 +51,5 @@ class SongFeedViewModel {
         let song = songs[index]
         return SongViewModel(song: song)
     }
-    
-    
-    
     
 }
