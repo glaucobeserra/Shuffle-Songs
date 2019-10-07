@@ -198,8 +198,8 @@
 		78F636FC234A35E8000EC85E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				78F63709234A4B8B000EC85E /* SongsAPI */,
 				78F6370E234A4ED2000EC85E /* Extensions */,
+				78F63709234A4B8B000EC85E /* SongsAPI */,
 				78F63713234A4FFE000EC85E /* URLSessionProtocol.swift */,
 				78F63718234A50F0000EC85E /* URLSessionProvider.swift */,
 				78F636FF234A365D000EC85E /* Result.swift */,
