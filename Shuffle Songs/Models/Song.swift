@@ -12,7 +12,7 @@ struct SongResult: Codable {
     let results: [Song]
 }
 
-struct Song: Codable {
+struct Song: Codable, Hashable {
     let id: Int
     let artistID: Int?
     let artistName: String?
@@ -29,15 +29,4 @@ struct Song: Codable {
     }
 }
 
-struct Artist: Codable {
-    let id: Int
-    let artistName: String
-    let artistType: String
-    let primaryGenreName: String
-}
-
-
-struct Content: Codable {
-    let artist: Artist?
-    let song: Song?
-}
+// TODO: Criar estratégia para identificar quando recebe um artista ou uma track

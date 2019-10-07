@@ -15,11 +15,18 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet private weak var trackNameLabel: UILabel!
     @IBOutlet private weak var infoLabel: UILabel!
     
+    // MARK: Properties
+    private let placeholderCover = Identifiers.placeholderCover.rawValue
+    
+    override func awakeFromNib() {
+        selectionStyle = .none
+    }
+    
     // MARK: Public methods
     func configCell(with model: SongViewModel) {
         trackNameLabel.text = model.trackName
         infoLabel.text = model.info
-        artworkImageView.image = UIImage(named: "placeholderCover")
+        artworkImageView.image = UIImage(named: placeholderCover)
         if let artworkURL = model.artworkURL {
             artworkImageView.loadImageUsingUrl(url: artworkURL)
         }

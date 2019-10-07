@@ -15,6 +15,7 @@ class SongFeedViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Properties
+    private let songCellIdentifier = Identifiers.songCell.rawValue
     private let artists: [Artists] = [.BlocoTotiOQue, .CharlieAndTheChewieHumans, .DecimaisMCs, .JohnDollar, .MCArianne]
     
     private lazy var viewModel: SongFeedViewModel = {
@@ -37,7 +38,8 @@ class SongFeedViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func shuffleSongs(_ sender: UIBarButtonItem) {
-        
+        viewModel.getShuffleSongs()
+        tableView.reloadData()
     }
 }
 
@@ -49,7 +51,7 @@ extension SongFeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as? SongTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: songCellIdentifier) as? SongTableViewCell else { return UITableViewCell() }
         let songModel = viewModel.dataModelAt(indexPath: indexPath)
         cell.configCell(with: songModel)
         return cell
@@ -65,7 +67,7 @@ extension SongFeedViewController {
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refresher
         }
-        tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
+        tableView.register(UINib(nibName: songCellIdentifier, bundle: nil), forCellReuseIdentifier: songCellIdentifier)
         
     }
     
@@ -76,7 +78,6 @@ extension SongFeedViewController {
                 self?.tableView.reloadData()
             }
         }
-        
         viewModel.onInformationFailed = { [weak self] error in
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             self?.showAlert(with: "Error", message: error, action: action)

@@ -26,7 +26,7 @@ extension UIImageView {
                 if let data = data, let image = UIImage(data: data) {
                     imageCache.setObject(image, forKey: nsURL)
                     UIView.transition(with: self,
-                                      duration:0.5,
+                                      duration: 0.5,
                                       options: .transitionCrossDissolve,
                                       animations: { self.image = image },
                                       completion: nil)
