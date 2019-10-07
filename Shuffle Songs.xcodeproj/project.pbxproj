@@ -32,6 +32,8 @@
 		78F63720234AEAE7000EC85E /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F6371E234AEAE7000EC85E /* SongTableViewCell.xib */; };
 		78F63722234AF9A0000EC85E /* SongFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F63721234AF9A0000EC85E /* SongFeedViewModel.swift */; };
 		78F63724234B0DD9000EC85E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F63723234B0DD9000EC85E /* UIImageView+Extension.swift */; };
+		78F63726234B0EFC000EC85E /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F63725234B0EFC000EC85E /* SongViewModel.swift */; };
+		78F63728234B14ED000EC85E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F63727234B14ED000EC85E /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		78F6371E234AEAE7000EC85E /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		78F63721234AF9A0000EC85E /* SongFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFeedViewModel.swift; sourceTree = "<group>"; };
 		78F63723234B0DD9000EC85E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		78F63725234B0EFC000EC85E /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
+		78F63727234B14ED000EC85E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				78F6371D234AEAE7000EC85E /* SongTableViewCell.swift */,
 				78F6371E234AEAE7000EC85E /* SongTableViewCell.xib */,
 				78F63721234AF9A0000EC85E /* SongFeedViewModel.swift */,
+				78F63725234B0EFC000EC85E /* SongViewModel.swift */,
+				78F63727234B14ED000EC85E /* UIView+Extension.swift */,
 			);
 			path = "Shuffle Songs";
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F63728234B14ED000EC85E /* UIView+Extension.swift in Sources */,
 				78F63714234A4FFE000EC85E /* URLSessionProtocol.swift in Sources */,
 				78F636FE234A35F6000EC85E /* HTTPMethod.swift in Sources */,
 				78F63710234A4EEA000EC85E /* URLRequest+Extension.swift in Sources */,
@@ -302,6 +309,7 @@
 				7803A134234A197700F009DC /* ViewController.swift in Sources */,
 				78F63719234A50F0000EC85E /* URLSessionProvider.swift in Sources */,
 				78F6371F234AEAE7000EC85E /* SongTableViewCell.swift in Sources */,
+				78F63726234B0EFC000EC85E /* SongViewModel.swift in Sources */,
 				78F6371B234AE8CC000EC85E /* WrapperType.swift in Sources */,
 				78F63706234A4AE3000EC85E /* APIClient.swift in Sources */,
 				78F63712234A4F09000EC85E /* URLComponents+Extension.swift in Sources */,

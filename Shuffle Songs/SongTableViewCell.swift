@@ -25,8 +25,11 @@ class SongTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(trackName: String) {
-        trackNameLabel.text = trackName
+    func configCell(with model: SongViewModel) {
+        
+        trackNameLabel.text = model.trackName
+        infoLabel.text = model.info
+        artworkImageView.downloaded(from: model.artworkURL!)
     }
     
 }

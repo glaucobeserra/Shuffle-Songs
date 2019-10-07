@@ -50,6 +50,12 @@ class SongFeedViewModel {
         }
     }
     
+    func dataModelAt(indexPath: IndexPath) -> SongViewModel {
+        let index = indexPath.row
+        let song = songs[index]
+        return SongViewModel(song: song)
+    }
+    
     
     
     

@@ -54,10 +54,8 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as? SongTableViewCell else {return UITableViewCell()}
-        let row = indexPath.row
-        let track = viewModel.songs[row].trackName ?? "erro"//.finalSongList[row].trackName ?? "erro"
-        cell.trackNameLabel.text = track
-//        cell.config(trackName: track)
+        let songModel = viewModel.dataModelAt(indexPath: indexPath)
+        cell.configCell(with: songModel)
         
             
 //
