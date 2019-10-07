@@ -29,7 +29,7 @@ class SongFeedViewModel {
     }
     
     // MARK: Inicialization
-    init(artists: [Artists], limit: Int = 6) {
+    init(artists: [Artists], limit: Int = 5) {
         self.artists = artists
         self.limit = limit
     }
@@ -42,7 +42,6 @@ class SongFeedViewModel {
         sessionProvider.request(request: service, type: SongResult.self) { result in
             switch result {
             case .success(let result):
-//                self.songs = []
                 let validSongs = result.results.filter {
                     $0.trackName != nil && $0.wrapperType == .track}
                 self.songs = validSongs
@@ -63,5 +62,4 @@ class SongFeedViewModel {
         let song = songs[index]
         return SongViewModel(song: song)
     }
-    
 }
