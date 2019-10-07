@@ -17,6 +17,7 @@ class SongTableViewCell: UITableViewCell {
     func configCell(with model: SongViewModel) {
         trackNameLabel.text = model.trackName
         infoLabel.text = model.info
+        artworkImageView.image = UIImage(named: "placeholderCover")
         if let artworkURL = model.artworkURL {
             artworkImageView.loadImageUsingUrl(url: artworkURL)
         }
